@@ -6,16 +6,32 @@
 
 html,
 body {
-  padding: 0;
-  margin : 0;
-
+  --black      : #000000;
+  --white      : #fff;
   --light-black: #2E4053;
+  --dark-gray: #98AFBC;
+
+  --gray     : #D7DFE4;
+  --buttonRed: #E3103E;
+  --blueBg   : #5256A3;
+
+  --bluefooter: #111457;
+
+  border    : none;
+  padding   : 0;
+  margin    : 0;
+  // overflow-x: hidden;
 
   color: var(--light-black);
 
-  font-size: toRem(16);
+  font-size  : toRem(16);
   line-height: 1.4;
 
   font-family: "Source Sans Pro";
   font-weight: 400;
+}
+
+pre {
+  width: 100%;
+  position: relative
 }

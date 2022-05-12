@@ -1,0 +1,38 @@
+@import '../../assets/scss/mixing.scss';
+
+.aprende-blog {
+
+  background: var(--bluefooter);
+  color     : var(--white);
+  padding   : 50px 25px 50px 20px;
+
+  color     : var(--dark-gray);
+
+  &--item {
+    display: flex;
+    justify-content: space-around;
+    font-size: toRem(14);
+    margin-bottom: toRem(30);
+    &:last-child{
+      margin-bottom: 0;
+    }
+    &-picture {
+      width: 45px;
+      margin-right: 20px;
+    }
+    &-content {
+      h3 {
+        color: var(--white);
+        font-size: toRem(16);
+        margin: 0 0 toRem(5);
+      }
+      p {
+        margin-top: toRem(5);
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+}

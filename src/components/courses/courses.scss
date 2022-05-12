@@ -1,0 +1,105 @@
+@import '../../assets/scss/mixing.scss';
+
+.aprende-courses {
+  padding         : 30px 20px 60px;
+  background-color: var(--white);
+  text-align      : center;
+
+  h4 {
+    margin-bottom : toRem(30);
+    font-family   : 'CollierBook';
+    color         : var(--bluefooter);
+    font-size     : toRem(24);
+    line-height   : 1.2;
+    letter-spacing: 0px;
+  }
+
+  &--categories {
+    padding        : 0;
+    list-style     : none;
+    display        : flex;
+    justify-content: space-between;
+
+    button {
+      border       : 1px solid var(--bluefooter);
+      padding      : 6px 20px;
+      border-radius: 30px;
+      font-size    : toRem(16);
+      color        : var(--bluefooter);
+      background   : var(--white);
+      transition   : all 0.65s ease;
+      cursor       : pointer;
+
+      &.active,
+      &:hover {
+        border    : 1px solid var(--bluefooter);
+        color     : var(--white);
+        background: var(--bluefooter);
+      }
+    }
+  }
+
+  &--list {
+    display        : flex;
+    justify-content: center;
+    flex-wrap      : wrap;
+  }
+}
+
+.card-course {
+  width        : 100%;
+  max-width    : 272px;
+  background   : var(--white);
+  box-shadow   : 0px 0px 6px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding      : 0 0 20px;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &--thumb {
+    display      : block;
+    border-radius: 5px 5px 0 0;
+    overflow     : hidden;
+
+    img {
+      display: block;
+      margin : 0;
+      width  : 100%;
+    }
+  }
+
+  &--title {
+    color      : var(--light-black);
+    font-size  : toRem(18);
+    line-height: 1.2;
+  }
+
+  &--button {
+    background-color: var(--buttonRed);
+    display         : inline-block;
+    border-radius   : 3px;
+    color           : var(--white);
+    text-decoration : none;
+    padding         : 10px 30px;
+    font-size       : toRem(16);
+    line-height     : 1.4;
+    font-weight     : 600;
+  }
+}
+
+.btn-more {
+  margin-top      : 30px;
+  background-color: var(--white);
+  display         : inline-block;
+  border          : 1px solid var(--buttonRed);
+  border-radius   : 3px;
+  color           : var(--buttonRed);
+  text-decoration : none;
+  padding         : 10px 30px;
+  font-size       : toRem(16);
+  line-height     : 1.4;
+  font-weight     : 600;
+}
