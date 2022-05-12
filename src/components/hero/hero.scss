@@ -11,7 +11,6 @@
   background-color   : black;
   z-index            : 1;
 
-
   &::before {
     content         : '';
     position        : absolute;
@@ -26,9 +25,8 @@
 
   }
 
-
   @media screen and (min-width: 992px) {
-    //  background-size    : contain;
+    background-attachment: fixed;
     padding-top: initial;
 
     .container {
@@ -39,25 +37,39 @@
     }
   }
 
+  @media screen and (min-width: 1170px) {
+    background-size    : 110%;
+    background-position: center;
+
+    &::before {
+      top   : auto;
+      bottom: 0;
+    }
+  }
+
   &--content {
     z-index   : 1;
     text-align: center;
     color     : var(--white);
+    display   : flex;
+    flex-wrap : wrap;
+
+    @media screen and (max-width: 992px) {
+
+      justify-content: center;
+    }
 
     @media screen and (min-width: 992px) {
-      width: 80%;
+      width    : 80%;
       max-width: 626px;
     }
 
     h1 {
-      font-family   : 'CollierBook';
-      font-size     : toRem(30);
-      display       : flex;
-      flex-direction: column;
+      font-family: 'Collier Book';
+      font-size  : toRem(30);
 
       span {
-        clear     : both;
-        display   : inline-block;
+        display   : block;
         background: var(--blueBg);
         padding   : 5px 15px;
       }
@@ -87,10 +99,18 @@
       line-height  : 1.4;
       margin-top   : 0.25rem;
       margin-bottom: 1rem;
+
+      @media screen and (min-width: 992px) {
+        font-size: toRem(21);
+      }
     }
 
     p {
       margin-bottom: 0.25rem;
+
+      @media screen and (min-width: 992px) {
+        margin-bottom: toRem(10);
+      }
     }
 
     form {

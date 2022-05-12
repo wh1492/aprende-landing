@@ -9,7 +9,8 @@
   text-align: center;
 
   @media screen and (min-width: 992px) {
-    padding   : 25px 20px;
+    padding: 25px 20px;
+
     .container {
       display        : flex;
       justify-content: space-between;
@@ -17,16 +18,29 @@
     }
   }
 
+  &--copy {
+    @media screen and (min-width: 992px) {
+      order       : 1;
+      flex-grow   : 2;
+      justify-self: flex-start;
+      text-align  : left;
+    }
+  }
+
   &--social {
     border         : none;
-    border-bottom  : 1px solid rgba(255, 255, 255, 0.5);
-    padding        : 0 0 toRem(24);
     display        : flex;
     justify-content: center;
     list-style     : none;
 
+    @media screen and (max-width: 992px) {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      justify-self : flex-end;
+      padding      : 0 0 toRem(24);
+    }
+
     @media screen and (min-width: 992px) {
-      display: none;
+      order: 3;
     }
 
     li {
@@ -52,6 +66,11 @@
     display        : flex;
     justify-content: space-around;
     list-style     : none;
+
+    @media screen and (min-width: 992px) {
+      order       : 2;
+      justify-self: flex-end;
+    }
 
     li {
       margin: 0 1rem;

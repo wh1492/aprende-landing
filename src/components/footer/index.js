@@ -14,7 +14,7 @@ const Footer = () => {
           <li><Link to="/"><img src={linkedin} alt="linkedin" /></Link></li>
           <li><Link to="/"><img src={tiktok} alt="tiktok" /></Link></li>
         </ul>
-        <p>
+        <p className="aprende-footer--copy">
           &copy; 2020 Aprende Institute.
         </p>
         <ul className="aprende-footer--footlinks">

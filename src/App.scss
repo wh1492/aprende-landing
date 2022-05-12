@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext');
 
+@font-face {
+  font-family: "Collier Book";
+  src: local("Collier Book"),
+   url("./assets/fonts/Collier-Book.otf") format("truetype");
+  font-weight: bold;
+  }
+
 * {
   box-sizing: border-box;
 }
