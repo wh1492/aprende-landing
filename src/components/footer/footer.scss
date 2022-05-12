@@ -3,40 +3,68 @@
 .aprende-footer {
 
   background: var(--bluefooter);
-  padding: 40px 20px 50px;
+  padding   : 40px 20px 50px;
   color     : var(--white);
-  font-size: toRem(16);
+  font-size : toRem(16);
   text-align: center;
 
-  &--social {
-    border: none;
-    border-bottom: 1px solid rgba(255,255,255,0.5);
-    padding: 0 0 toRem(24);
-    display: flex;
-    justify-content: center;
-    list-style: none;
-     li {
-       margin: 0 5% ;
-     }
-    a {
-      display: block;
-      width: 24px;
-      height: 24px;
-    }
-    img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      margin: 0 auto;
+  @media screen and (min-width: 992px) {
+    padding   : 25px 20px;
+    .container {
+      display        : flex;
+      justify-content: space-between;
+      align-content  : center;
     }
   }
-  &--footlinks {
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
+
+  &--social {
+    border         : none;
+    border-bottom  : 1px solid rgba(255, 255, 255, 0.5);
+    padding        : 0 0 toRem(24);
+    display        : flex;
+    justify-content: center;
+    list-style     : none;
+
+    @media screen and (min-width: 992px) {
+      display: none;
+    }
+
+    li {
+      margin: 0 5%;
+    }
+
     a {
-      color: var(--white);
+      display: block;
+      width  : 24px;
+      height : 24px;
+    }
+
+    img {
+      display: block;
+      width  : 100%;
+      height : 100%;
+      margin : 0 auto;
+    }
+  }
+
+  &--footlinks {
+    padding        : 0;
+    display        : flex;
+    justify-content: space-around;
+    list-style     : none;
+
+    li {
+      margin: 0 1rem;
+
+      @media screen and (min-width: 992px) {
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+
+    a {
+      color          : var(--white);
       text-decoration: none;
     }
   }

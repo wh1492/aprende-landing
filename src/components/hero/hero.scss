@@ -4,11 +4,13 @@
   // border             : 1px solid lime;
   position           : relative;
   padding            : 0 20px 50px;
+  background-size    : auto 63vh;
   padding-top        : 70vh;
   background-position: top center;
   background-repeat  : no-repeat;
   background-color   : black;
   z-index            : 1;
+
 
   &::before {
     content         : '';
@@ -24,13 +26,34 @@
 
   }
 
+
+  @media screen and (min-width: 992px) {
+    //  background-size    : contain;
+    padding-top: initial;
+
+    .container {
+
+      display        : flex;
+      justify-content: space-between;
+      align-items    : flex-end;
+    }
+  }
+
   &--content {
+    z-index   : 1;
     text-align: center;
     color     : var(--white);
 
+    @media screen and (min-width: 992px) {
+      width: 80%;
+      max-width: 626px;
+    }
+
     h1 {
-      font-family: 'CollierBook';
-      font-size  : toRem(30);
+      font-family   : 'CollierBook';
+      font-size     : toRem(30);
+      display       : flex;
+      flex-direction: column;
 
       span {
         clear     : both;
@@ -39,15 +62,25 @@
         padding   : 5px 15px;
       }
     }
+
+    @media screen and (min-width: 992px) {
+      text-align: left;
+    }
   }
 
   &--form {
+    z-index         : 1;
     margin-top      : 2rem;
     padding         : 30px 25px;
     border-radius   : 5px;
     background-color: var(--white);
     box-shadow      : 0px 0px 6px #000000;
     text-align      : center;
+
+    @media screen and (min-width: 992px) {
+      width    : 100%;
+      max-width: 348px;
+    }
 
     h3 {
       font-size    : toRem(30);

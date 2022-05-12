@@ -25,9 +25,12 @@ const Courses = () => {
 
   function viewMore() {
     setPostCount(postCount + 4)
-    // console.log('click a more', postCount)
+    setLoading(true)
+    setTimeout(function() {
+      setLoading(false)
+    }, 500)
   }
-  
+
   const fetchPost = async () => {
     const response = await fetch(
       "https://qa.aprende.dev/wp-json/aprende/v1/ap-master-class"
@@ -42,30 +45,37 @@ const Courses = () => {
   }, []);
 
 
-  if (loading) {
-    return (
-      <p>Cargando...</p>
-    )
-  }
 
   return (
     <div className="aprende-courses">
-      <h4>Explora todas nuestras Clases Magistrales</h4>
-      {/* <pre>
-          {JSON.stringify(posts, 0)}
-        </pre> */}
-      <ul className="aprende-courses--categories">
-        <li><button id="all" className="active">Todas</button></li>
-        <li><button id="chocolateria">Chocolatería</button></li>
-        <li><button id="manicure">Manicure</button></li>
-      </ul>
+      <div className="container">
 
-      <div className="aprende-courses--list">
-        {
-          posts.slice(0, postCount).map(post => <CardCourse course={post} key={post.id} />)
-        }
+        <h4>Explora todas nuestras Clases Magistrales</h4>
+
+        <ul className="aprende-courses--categories">
+          <li><button id="all" className="active">Todas</button></li>
+          <li><button id="chocolateria">Chocolatería</button></li>
+          <li><button id="manicure">Manicure</button></li>
+        </ul>
+
+        {/* {loading && ( */}
+          <p>Cargando...</p>
+        {/* )} */}
+
+        {/* {!loading && (
+          <>
+            <div className="aprende-courses--list">
+              {
+                posts.slice(0, postCount).map(post => <CardCourse course={post} key={post.id} />)
+              }
+            </div>
+            <button className={ loading ? 'btn-more active' : 'btn-more' } onClick={() => viewMore()}>Ver más</button>
+          </>
+        )
+        } */}
+     
+
       </div>
-      <button className="btn-more" onClick={() => viewMore()}>Ver más</button>
     </div>
   )
 }
