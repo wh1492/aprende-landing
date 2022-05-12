@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Loader from '../commons/loader'
 import './courses.scss'
 
 
@@ -26,7 +27,7 @@ const Courses = () => {
   function viewMore() {
     setPostCount(postCount + 4)
     setLoading(true)
-    setTimeout(function() {
+    setTimeout(function () {
       setLoading(false)
     }, 500)
   }
@@ -58,22 +59,23 @@ const Courses = () => {
           <li><button id="manicure">Manicure</button></li>
         </ul>
 
-        {/* {loading && ( */}
-          <p>Cargando...</p>
-        {/* )} */}
+        {loading && (
+          <Loader />
+        )}
 
-        {/* {!loading && (
+        {!loading && (
           <>
+
             <div className="aprende-courses--list">
               {
                 posts.slice(0, postCount).map(post => <CardCourse course={post} key={post.id} />)
               }
             </div>
-            <button className={ loading ? 'btn-more active' : 'btn-more' } onClick={() => viewMore()}>Ver más</button>
+            <button className={loading ? 'btn-more active' : 'btn-more'} onClick={() => viewMore()}>Ver más</button>
           </>
         )
-        } */}
-     
+        }
+
 
       </div>
     </div>
